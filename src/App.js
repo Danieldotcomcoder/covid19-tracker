@@ -1,11 +1,9 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import MainPage from './Components/mainpage';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <h1> Hello </h1>
-      </Router>
+      <MainPage />
     </div>
   );
 }
