@@ -1,15 +1,13 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { loadingBarReducer } from 'react-redux-loading-bar';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
-import stockReducer from './stocks/stocks';
+import countriesReducer from './countries/countries';
 
 const reducer = combineReducers({
-  stocks: stockReducer,
+  countries: countriesReducer,
+  loadingBar: loadingBarReducer,
 });
 
-const store = createStore(
-  reducer,
-  applyMiddleware(thunk, logger),
-);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;
