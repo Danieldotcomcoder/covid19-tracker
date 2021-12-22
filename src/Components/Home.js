@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/countries/countries';
@@ -8,49 +9,43 @@ import micimg from '../assets/microphone.png';
 import settingimg from '../assets/settings.png';
 
 const Home = () => {
-  const continent = 'Europe';
-
   const dispatch = useDispatch();
-  const { items, totalConfirmed, loading } = useSelector((state) => ({
+
+  const { items, totalConfirmed } = useSelector((state) => ({
     ...state.countries,
     loading: state.loadingBar.default,
   }));
+  const continent = 'Europe';
 
   useEffect(() => {
-    if (!items.length) {
-      dispatch(fetchData(continent));
-    }
+    dispatch(fetchData(continent));
   }, []);
-
-  if (loading) {
-    return null;
-  }
 
   return (
     <section>
-      <header className="App-header">
+      <header className="home-main">
         <img src={limg} alt="arrowimage" />
         <h4 className="2021"> &nbsp; 2021</h4>
-        <h5 className="App-header-title">Most Views</h5>
+        <h5 className="main-title">Most Views</h5>
         <img src={micimg} alt="micropone" />
-        <div className="pl-5">
+        <div className="setimg">
           <img src={settingimg} alt="settings" />
         </div>
       </header>
-      <div className="Home-banner">
-        <div className="Home-banner-left">
+      <div className="home-middle">
+        <div className="Home-left">
           <img src={map} alt="Banner view" className="App-map" />
         </div>
-        <div className="Home-banner-right">
-          <h1 className="App-title">{continent}</h1>
-          <p className="App-subtitle">
+        <div className="Home-right">
+          <h1 className="cont-name">{continent}</h1>
+          <p className="cont-info">
             {totalConfirmed}
             &nbsp; Cases
           </p>
         </div>
       </div>
-      <section className="Home-stats">
-        <h5 className="App-section-title">STATS BY COUNTRY</h5>
+      <section className="country-info">
+        <h5 className="country-down">STATS BY COUNTRY</h5>
         <Display items={items} />
       </section>
     </section>

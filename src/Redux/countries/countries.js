@@ -4,21 +4,21 @@ import * as API from './FetchAPI';
 const LOAD_COUNTRIES = 'cases/load-countries';
 const LOAD_COUNTRY = 'cases/load-country';
 
-export const loadCountries = (payload) => ({
+export const loadAllCountries = (payload) => ({
   type: LOAD_COUNTRIES,
   payload,
 });
 
-export const loadCountry = (payload) => ({
+export const loadCountryInfo = (payload) => ({
   type: LOAD_COUNTRY,
   payload,
 });
 
-export const fetchCountry = (name) => async (dispatch) => {
+export const fetchCitiesData = (name) => async (dispatch) => {
   dispatch(showLoading());
   const data = await API.getCountryDetails(name);
 
-  dispatch(loadCountry(data));
+  dispatch(loadCountryInfo(data));
   dispatch(hideLoading());
 };
 
@@ -26,8 +26,8 @@ export const fetchData = (continent) => async (dispatch) => {
   dispatch(showLoading());
   const map = await API.getAllCountries(continent);
 
-  const data = Object.values(map).reduce((accumulator, currentValue) => {
-    const { All: { country, confirmed } } = currentValue;
+  const Info = Object.values(map).reduce((accumulator, Value) => {
+    const { All: { country, confirmed } } = Value;
 
     accumulator.items.push({ name: country, confirmed });
     accumulator.totalConfirmed += confirmed;
@@ -38,9 +38,9 @@ export const fetchData = (continent) => async (dispatch) => {
     items: [],
   });
 
-  data.items = data.items.sort((a, b) => b.confirmed - a.confirmed);
+  Info.items = Info.items.sort((a, b) => b.confirmed - a.confirmed);
 
-  dispatch(loadCountries(data));
+  dispatch(loadAllCountries(Info));
   dispatch(hideLoading());
 };
 

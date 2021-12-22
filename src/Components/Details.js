@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { fetchCountry } from '../Redux/countries/countries';
+import { fetchCitiesData } from '../Redux/countries/countries';
 import img from '../assets/virus.png';
 import leftarrow from '../assets/back-button.png';
 import micimg from '../assets/microphone.png';
@@ -17,7 +17,7 @@ const Details = () => {
   }));
 
   useEffect(() => {
-    dispatch(fetchCountry(name));
+    dispatch(fetchCitiesData(name));
   }, []);
 
   if (loading || !country) {
@@ -28,21 +28,21 @@ const Details = () => {
 
   return (
     <section>
-      <header className="App-header">
+      <header className="home-main">
         <Link to="/">
           <img src={leftarrow} alt="arrowimage" />
         </Link>
-        <h5 className="App-header-title">town/city views</h5>
+        <h5 className="main-title">town/city views</h5>
         <img src={micimg} alt="arrowimage" />
         <div className="pl-5">
           <img src={settingimg} alt="arrowimage" />
         </div>
       </header>
-      <div className="Details-banner">
-        <div className="Details-banner-left">
+      <div className="banner">
+        <div className="banner-left">
           <img src={img} alt="map view" className="App-map" />
         </div>
-        <div className="Details-banner-right">
+        <div className="banner-right">
           <h1 className="App-title">{All.country}</h1>
           <p className="App-subtitle">
             {All.confirmed}
@@ -63,7 +63,7 @@ const Details = () => {
                   {' '}
                   cases
                 </p>
-                <img src={rightarrow} alt="arrowimage" />
+                <img src={rightarrow} alt="arrowimage" className="right-arrow-img" />
               </div>
             </li>
           ))}
