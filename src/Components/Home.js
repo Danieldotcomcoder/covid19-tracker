@@ -1,5 +1,4 @@
-/* eslint-disable no-return-assign */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/countries/countries';
 import Display from './Display';
@@ -10,8 +9,10 @@ import settingimg from '../assets/settings.png';
 
 const Home = () => {
   const dispatch = useDispatch();
-
-  const { items, totalConfirmed } = useSelector((state) => ({
+  const [searchResult, setSearchResult] = useState(null);
+  const {
+    items, totalConfirmed, loading,
+  } = useSelector((state) => ({
     ...state.countries,
     loading: state.loadingBar.default,
   }));
@@ -21,6 +22,17 @@ const Home = () => {
     dispatch(fetchData(continent));
   }, []);
 
+  const searchHandler = (event) => {
+    event.preventDefault();
+    const input = event.target.value.toLowerCase().trim();
+    const newitems = items.filter((element) => element.name.toLowerCase()
+      .includes(input));
+    setSearchResult(newitems);
+  };
+
+  if (loading) {
+    return null;
+  }
   return (
     <section>
       <header className="home-main">
@@ -45,8 +57,15 @@ const Home = () => {
         </div>
       </div>
       <section className="country-info">
-        <h5 className="country-down">STATS BY COUNTRY</h5>
-        <Display items={items} />
+        <div className="middle">
+          <h5 className="statsbycountry">STATS BY COUNTRY</h5>
+          <input placeholder="Search by Country Name" type="search" className="search" onChange={searchHandler} />
+        </div>
+        {
+          (searchResult === null)
+            ? <Display items={items} />
+            : <Display items={searchResult} />
+        }
       </section>
     </section>
   );
