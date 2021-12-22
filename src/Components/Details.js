@@ -33,7 +33,7 @@ const Details = () => {
           <img src={leftarrow} alt="arrowimage" />
         </Link>
         <h5 className="main-title">town/city views</h5>
-        <img src={micimg} alt="arrowimage" />
+        <img src={micimg} alt="arrowimage" className="mic-image" />
         <div className="pl-5">
           <img src={settingimg} alt="arrowimage" />
         </div>
@@ -43,7 +43,7 @@ const Details = () => {
           <img src={img} alt="map view" className="App-map" />
         </div>
         <div className="banner-right">
-          <h1 className="App-title">{All.country}</h1>
+          <h2 className="Details-title">{All.country}</h2>
           <p className="App-subtitle">
             {All.confirmed}
              &nbsp;
@@ -56,7 +56,7 @@ const Details = () => {
         <ul>
           {list.map(([name, { confirmed }]) => (
             <li key={name} className="Details-item">
-              <h6 className="Details-item-title">{name}</h6>
+              <h4 className="Details-item-title">{name}</h4>
               <div className="Details-item-right">
                 <p className="App-subtitle">
                   {confirmed}

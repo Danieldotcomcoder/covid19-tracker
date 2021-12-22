@@ -49,6 +49,16 @@ a {
   text-transform: uppercase;
 }
 
+.Details-title {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.mic-image {
+  margin-right: 1%;
+  margin-bottom: 1.2%;
+}
+
 .country-down {
   font-size: 14px;
   padding: 4px 8px;
@@ -165,7 +175,7 @@ a {
   }
   
   .Details-item-title {
-    font-size: 20px;
+    font-size: 19px;
   }
   
   .Details-item-right {

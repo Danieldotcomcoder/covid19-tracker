@@ -27,7 +27,7 @@ const Home = () => {
         <img src={limg} alt="arrowimage" />
         <h4 className="2021"> &nbsp; 2021</h4>
         <h5 className="main-title">Most Views</h5>
-        <img src={micimg} alt="micropone" />
+        <img src={micimg} alt="micropone" className="mic-image" />
         <div className="setimg">
           <img src={settingimg} alt="settings" />
         </div>
