@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Page Renders App component 1`] = `
+Array [
+  <div />,
+  <section>
+    <header
+      className="home-main"
+    >
+      <img
+        alt="arrowimage"
+        src="back-button.png"
+        title="aimg"
+      />
+      <h4
+        className="2021"
+      >
+           2021
+      </h4>
+      <h5
+        className="main-title"
+      >
+        Most Views
+      </h5>
+      <img
+        alt="micropone"
+        className="mic-image"
+        src="microphone.png"
+      />
+      <div
+        className="setimg"
+      >
+        <img
+          alt="settings"
+          src="settings.png"
+        />
+      </div>
+    </header>
+    <div
+      className="home-middle"
+    >
+      <div
+        className="Home-left"
+      >
+        <img
+          alt="Banner view"
+          className="App-map"
+          src="europe.png"
+        />
+      </div>
+      <div
+        className="Home-right"
+      >
+        <h1
+          className="cont-name"
+        >
+          Europe
+        </h1>
+        <p
+          className="cont-info"
+        >
+          0
+            Cases
+        </p>
+      </div>
+    </div>
+    <section
+      className="country-info"
+    >
+      <div
+        className="middle"
+      >
+        <h5
+          className="statsbycountry"
+        >
+          STATS BY COUNTRY
+        </h5>
+        <input
+          className="search"
+          onChange={[Function]}
+          placeholder="Search by Country Name"
+          type="search"
+        />
+      </div>
+      <ul
+        className="grid"
+      />
+    </section>
+  </section>,
+  ",",
+]
+`;

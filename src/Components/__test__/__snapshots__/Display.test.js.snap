@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Display Component 1`] = `
+Array [
+  <ul
+    className="grid"
+  />,
+  ",",
+]
+`;

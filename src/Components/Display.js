@@ -6,7 +6,7 @@ const Display = ({ items = [] }) => (
   <ul className="grid">
     {items.map(({ name, confirmed }) => (
       <li key={name} className="grid-item">
-        <Link to={`/country/${name}`}>
+        <Link to={`/country/${name}`} role="switch">
           <Item confirmed={confirmed} name={name} />
         </Link>
       </li>

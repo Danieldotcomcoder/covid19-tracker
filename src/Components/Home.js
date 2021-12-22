@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <section>
       <header className="home-main">
-        <img src={limg} alt="arrowimage" />
+        <img src={limg} alt="arrowimage" title="aimg" />
         <h4 className="2021"> &nbsp; 2021</h4>
         <h5 className="main-title">Most Views</h5>
         <img src={micimg} alt="micropone" className="mic-image" />
