@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders item component 1`] = `
+Array [
+  <div
+    className="Home-item-content"
+  >
+    <div
+      className="item-image"
+    >
+      <img
+        alt="right-arrow"
+        src="right.png"
+      />
+    </div>
+    <div
+      className="Home-item-top"
+    >
+      <img
+        alt="virus view"
+        className="Home-item-image"
+        src="virus.png"
+      />
+    </div>
+    <div
+      className="Home-item-bottom"
+    >
+      <h2
+        className="country-name"
+      />
+      <h5
+        className="country-cases"
+      />
+    </div>
+  </div>,
+  ",",
+]
+`;
