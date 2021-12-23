@@ -59,7 +59,7 @@ const Home = () => {
       <section className="country-info">
         <div className="middle">
           <h5 className="statsbycountry">STATS BY COUNTRY</h5>
-          <input placeholder="Search by Country Name" type="search" className="search" onChange={searchHandler} />
+          <input placeholder="Search by Country" type="search" className="search" onChange={searchHandler} />
         </div>
         {
           (searchResult === null)
