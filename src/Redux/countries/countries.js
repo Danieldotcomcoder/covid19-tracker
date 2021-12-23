@@ -4,6 +4,7 @@ import * as API from './FetchAPI';
 const LOAD_COUNTRIES = 'cases/load-countries';
 const LOAD_COUNTRY = 'cases/load-country';
 
+// Actions
 export const loadAllCountries = (payload) => ({
   type: LOAD_COUNTRIES,
   payload,
@@ -50,6 +51,7 @@ const initialState = {
   selected: null,
 };
 
+// Reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_COUNTRIES:
