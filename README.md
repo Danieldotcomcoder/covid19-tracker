@@ -1,7 +1,12 @@
 # Covid-19 Tracker
-- A mobile web application that gets real-time data from the media group covid API and Displays the number of 
- cases for every big city in any country in europe
+- A mobile web application that gets real-time data from the media group covid API and Displays the number of covid
+  cases for any country and also main cities in any given country.
 # Screenshots
+## Home Page
+![image](https://user-images.githubusercontent.com/87448628/147209983-8d8e5cba-e444-44dc-9085-3165f5c12926.png)
+
+## Details Page
+![image](https://user-images.githubusercontent.com/87448628/147210515-1c4e58c4-2451-4a6c-98ac-fb5a91966eb5.png)
 ## Built With
 - React-Redux
 - CSS3
@@ -11,7 +16,7 @@
 - Visual Studio Code
 ## Live Demo
 
-[Link]
+[Link](https://zealous-kare-6236f1.netlify.app/)
 
 ## Getting Started
 
