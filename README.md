@@ -14,6 +14,11 @@
 - Github
 - Gitflow
 - Visual Studio Code
+
+## Desciption Video 
+
+[Link](https://www.loom.com/share/26f4d365a35c4082b9ad61a3cddf01fb)
+
 ## Live Demo
 
 [Link](https://zealous-kare-6236f1.netlify.app/)

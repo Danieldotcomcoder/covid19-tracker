@@ -78,7 +78,7 @@ Array [
         <input
           className="search"
           onChange={[Function]}
-          placeholder="Search by Country Name"
+          placeholder="Search by Country"
           type="search"
         />
       </div>
