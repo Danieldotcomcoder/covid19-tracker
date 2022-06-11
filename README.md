@@ -38,7 +38,7 @@
 
 - [GitHub](https://github.com/Danieldotcomcoder)
 - [Twitter](https://twitter.com/DannyDotcoder)
-- [LinkedIn](https://www.linkedin.com/in/daniel-shdeed-832b03115/)
+- [LinkedIn](https://www.linkedin.com/in/daniel-shdeed/)
 
 ## 🤝 Contributing
 
