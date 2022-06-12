@@ -54,7 +54,3 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Nelson Sakwa on Behance (Project Design from Behance)
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
