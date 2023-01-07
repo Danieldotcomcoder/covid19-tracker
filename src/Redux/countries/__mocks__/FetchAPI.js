@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 export const getCountries = async () => Promise.resolve({
   Testing1: {
     All: {

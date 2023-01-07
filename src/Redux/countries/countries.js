@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import * as API from './FetchAPI';
 
@@ -23,39 +24,25 @@ export const fetchCitiesData = (name) => async (dispatch) => {
   dispatch(hideLoading());
 };
 
-export const fetchData = (continent) => async (dispatch) => {
+export const fetchData = () => async (dispatch) => {
   dispatch(showLoading());
-  const map = await API.getAllCountries(continent);
+  const map = await API.getAllCountries();
 
-  const Info = Object.values(map).reduce((accumulator, Value) => {
-    const { All: { country, confirmed } } = Value;
+  // console.log(map.response.map((item) => console.log(item)));
 
-    accumulator.items.push({ name: country, confirmed });
-    accumulator.totalConfirmed += confirmed;
-
-    return accumulator;
-  }, {
-    totalConfirmed: 0,
-    items: [],
-  });
-
-  Info.items = Info.items.sort((a, b) => b.confirmed - a.confirmed);
-
-  dispatch(loadAllCountries(Info));
+  dispatch(loadAllCountries(map.response));
   dispatch(hideLoading());
 };
 
 const initialState = {
-  totalConfirmed: 0,
-  items: [],
-  selected: null,
+  current: [],
 };
 
 // Reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_COUNTRIES:
-      return action.payload;
+      return { current: action.payload };
     case LOAD_COUNTRY:
       return { ...state, selected: action.payload };
     default:

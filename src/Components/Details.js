@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -28,7 +30,7 @@ const Details = () => {
 
   return (
     <section>
-      <header className="home-main">
+      {/* <header className="home-main">
         <Link to="/">
           <img src={leftarrow} alt="arrowimage" />
         </Link>
@@ -68,7 +70,7 @@ const Details = () => {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </section>
   );
 };

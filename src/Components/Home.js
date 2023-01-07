@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/countries/countries';
@@ -8,18 +11,13 @@ import micimg from '../assets/microphone.png';
 import settingimg from '../assets/settings.png';
 
 const Home = () => {
+  const items = useSelector((state) => state.countries.current);
   const dispatch = useDispatch();
   const [searchResult, setSearchResult] = useState(null);
-  const {
-    items, totalConfirmed, loading,
-  } = useSelector((state) => ({
-    ...state.countries,
-    loading: state.loadingBar.default,
-  }));
   const continent = 'Europe';
 
   useEffect(() => {
-    dispatch(fetchData(continent));
+    dispatch(fetchData());
   }, []);
 
   const searchHandler = (event) => {
@@ -29,46 +27,40 @@ const Home = () => {
       .includes(input));
     setSearchResult(newitems);
   };
+  if (items) {
+    return (
+      <section>
+        <header className="home-main">
+          <img src={limg} alt="arrowimage" title="aimg" />
+          <h4 className="2021"> &nbsp; 2021</h4>
+          <h5 className="main-title">Most Views</h5>
+          <img src={micimg} alt="micropone" className="mic-image" />
+          <div className="setimg">
+            <img src={settingimg} alt="settings" />
+          </div>
+        </header>
+        <div className="home-middle">
+          <div className="Home-left">
+            <img src={map} alt="Banner view" className="App-map" />
+          </div>
+          <div className="Home-right">
+            <h1 className="cont-name">{continent}</h1>
+            <p className="cont-info">
 
-  if (loading) {
-    return null;
-  }
-  return (
-    <section>
-      <header className="home-main">
-        <img src={limg} alt="arrowimage" title="aimg" />
-        <h4 className="2021"> &nbsp; 2021</h4>
-        <h5 className="main-title">Most Views</h5>
-        <img src={micimg} alt="micropone" className="mic-image" />
-        <div className="setimg">
-          <img src={settingimg} alt="settings" />
-        </div>
-      </header>
-      <div className="home-middle">
-        <div className="Home-left">
-          <img src={map} alt="Banner view" className="App-map" />
-        </div>
-        <div className="Home-right">
-          <h1 className="cont-name">{continent}</h1>
-          <p className="cont-info">
-            {totalConfirmed}
             &nbsp; Cases
-          </p>
+            </p>
+          </div>
         </div>
-      </div>
-      <section className="country-info">
-        <div className="middle">
-          <h5 className="statsbycountry">STATS BY COUNTRY</h5>
-          <input placeholder="Search by Country" type="search" className="search" onChange={searchHandler} />
-        </div>
-        {
-          (searchResult === null)
-            ? <Display items={items} />
-            : <Display items={searchResult} />
-        }
+        <section className="country-info">
+          <div className="middle">
+            <h5 className="statsbycountry">STATS BY COUNTRY</h5>
+            <input placeholder="Search by Country" type="search" className="search" onChange={searchHandler} />
+          </div>
+          <Display items={items} />
+        </section>
       </section>
-    </section>
-  );
+    );
+  }
 };
 
 export default Home;

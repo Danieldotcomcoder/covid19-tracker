@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import PropTypes from 'prop-types';
 import img from '../assets/virus.png';
 import rimg from '../assets/right.png';

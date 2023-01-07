@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoadingBar from 'react-redux-loading-bar';
 import Home from './Components/Home';

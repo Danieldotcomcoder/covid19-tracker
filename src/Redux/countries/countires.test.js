@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import reducer, { loadAllCountries, loadCountryInfo } from './countries';
 
 test('test the initial state', () => {
