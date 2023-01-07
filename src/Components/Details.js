@@ -21,6 +21,7 @@ const Details = () => {
     dispatch(fetchData());
   }, []);
   const data = country.find((item) => item.country === name);
+  console.log(data);
   if (data && country) {
     return (
       <section>
@@ -39,18 +40,49 @@ const Details = () => {
             <img src={img} alt="map view" className="App-map" />
           </div>
           <div className="banner-right">
-            <h2 className="Details-title" />
             <p className="App-subtitle">
+              {data.country}
+            </p>
+            <p className="App-subtitle">
+              Continent:
+              {' '}
+              {data.continent}
 
-              &nbsp;
-              Cases
+            </p>
+            <p className="App-subtitle">
+              Population:
+              {' '}
+              {data.population}
             </p>
           </div>
         </div>
         <section className="Home-stats">
-          <h5 className="App-section-title">Details</h5>
+          <h5 className="App-section-title">
+            Covid Details for:
+            {' '}
+            {data.country}
+          </h5>
           <ul>
-            <li>{data.country}</li>
+            <li className="cases-list">
+              <div>Active: </div>
+              <div className="active-cases">{data.cases.active}</div>
+            </li>
+            <li className="cases-list">
+              <div>New: </div>
+              <div className="active-cases">{data.cases.new}</div>
+            </li>
+            <li className="cases-list">
+              <div>Critical: </div>
+              <div className="active-cases">{data.cases.critical}</div>
+            </li>
+            <li className="cases-list">
+              <div>Recovered: </div>
+              <div className="active-cases">{data.cases.recovered}</div>
+            </li>
+            <li className="cases-list">
+              <div>Total: </div>
+              <div className="active-cases">{data.cases.total}</div>
+            </li>
           </ul>
         </section>
       </section>

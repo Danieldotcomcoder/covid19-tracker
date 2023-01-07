@@ -48,11 +48,6 @@ a {
   text-transform: uppercase;
 }
 
-.Details-title {
-  text-align: left;
-  margin-left: 10%;
-}
-
 .mic-image {
   margin-right: 1%;
   margin-bottom: 1.2%;
@@ -152,7 +147,8 @@ ul {
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  text-align: center;
 }
 
 .banner-left {
@@ -198,4 +194,13 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.cases-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.active-cases {
+  margin-left: 5%;
 }
