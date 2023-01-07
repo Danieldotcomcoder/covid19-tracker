@@ -26,7 +26,7 @@ const Display = ({ items = [] }) => {
   }
   return (
     <div>
-      nothing
+      Fetching Data ...
     </div>
   );
 };
