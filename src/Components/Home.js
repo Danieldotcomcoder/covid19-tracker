@@ -14,7 +14,7 @@ const Home = () => {
   const items = useSelector((state) => state.countries.current);
   const dispatch = useDispatch();
   const [searchResult, setSearchResult] = useState(null);
-  const continent = 'Europe';
+  const Location = 'WorldWide';
 
   useEffect(() => {
     dispatch(fetchData());
@@ -23,7 +23,7 @@ const Home = () => {
   const searchHandler = (event) => {
     event.preventDefault();
     const input = event.target.value.toLowerCase().trim();
-    const newitems = items.filter((element) => element.name.toLowerCase()
+    const newitems = items.filter((element) => element.country.toLowerCase()
       .includes(input));
     setSearchResult(newitems);
   };
@@ -44,7 +44,7 @@ const Home = () => {
             <img src={map} alt="Banner view" className="App-map" />
           </div>
           <div className="Home-right">
-            <h1 className="cont-name">{continent}</h1>
+            <h1 className="cont-name">{Location}</h1>
             <p className="cont-info">
 
             &nbsp; Cases
@@ -56,7 +56,11 @@ const Home = () => {
             <h5 className="statsbycountry">STATS BY COUNTRY</h5>
             <input placeholder="Search by Country" type="search" className="search" onChange={searchHandler} />
           </div>
-          <Display items={items} />
+          {
+          (searchResult === null)
+            ? <Display items={items} />
+            : <Display items={searchResult} />
+        }
         </section>
       </section>
     );
