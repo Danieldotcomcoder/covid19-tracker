@@ -1,8 +1,4 @@
-/* eslint-disable jsx-a11y/heading-has-content */
-/* eslint-disable consistent-return */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchData } from '../Redux/countries/countries';
@@ -10,7 +6,6 @@ import img from '../assets/virus.png';
 import leftarrow from '../assets/back-button.png';
 import micimg from '../assets/microphone.png';
 import settingimg from '../assets/settings.png';
-import rightarrow from '../assets/right.png';
 
 const Details = () => {
   const country = useSelector((state) => state.countries.current);
@@ -21,7 +16,6 @@ const Details = () => {
     dispatch(fetchData());
   }, []);
   const data = country.find((item) => item.country === name);
-  console.log(data);
   if (data && country) {
     return (
       <section>

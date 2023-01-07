@@ -1,6 +1,4 @@
 /* eslint-disable consistent-return */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/countries/countries';

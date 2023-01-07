@@ -1,12 +1,5 @@
-/* eslint-disable consistent-return */
 /* eslint-disable react/prop-types */
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable linebreak-style */
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Item from './Item';
 
 const Display = ({ items = [] }) => {

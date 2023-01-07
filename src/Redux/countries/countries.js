@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import * as API from './FetchAPI';
 

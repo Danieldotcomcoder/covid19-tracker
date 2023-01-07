@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 export const getAllCountries = async () => {
   const options = {
     method: 'GET',
@@ -7,11 +8,5 @@ export const getAllCountries = async () => {
     },
   };
   const result = await fetch('https://covid-193.p.rapidapi.com/statistics', options);
-  return result.json();
-};
-
-export const getCountryDetails = async (name) => {
-  const result = await fetch(`https://covid-api.mmediagroup.fr/v1/cases?country=${name}`);
-
   return result.json();
 };
